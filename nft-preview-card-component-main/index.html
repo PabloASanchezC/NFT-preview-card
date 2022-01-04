@@ -5,29 +5,217 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | NFT preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      /* ### Primary */
+
+      --SoftBlue: hsl(215, 51%, 70%);
+      --Cyan: hsl(178, 100%, 50%);
+
+      /* ### Neutral */
+
+      --VeryDarkBlueMain: hsl(217, 54%, 11%);
+      --darkBlueCard: hsl(216, 50%, 16%);
+      --Blue: hsl(215, 32%, 27%);
+      --White: hsl(0, 0%, 100%);
+
+      /* ###font size */
+
+      --sm: 1.4rem;
+      --md: 1.8rem;
+      --lg: 2.4rem;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 62.5%;
+        font-family: 'Outfit', sans-serif;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      background-color: var(--VeryDarkBlueMain);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      margin: 80px auto;
+      padding: 25px;
+      width: 375px;
+      /* height: 600px; */
+      border-radius: 10px;
+      background-color: var(--darkBlueCard);
+    }
+
+    main .images {
+      width: 330px;
+      height: 330px;
+      /* position: absolute; */
+      align-self: center;
+    }
+
+    main figure .cube {
+      width: 330px;
+      border-radius: 10px;
+    }
+
+    main .figEye {
+      display: grid;
+      place-items: center;
+      position: relative;
+      width: 330px;
+      height: 330px;
+      bottom: 332px;
+      background-color: rgb(0, 255, 255, .4);
+      border-radius: 10px;
+      opacity: 0;
+    }
+
+    main .figEye:hover{
+      opacity: 1;
+    }
+
+    main .figEye .eye {
+      width: 60px;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    h1 a {
+      color: var(--White);
+      font-size: var(--lg);
+      text-decoration: none;
+    }
+
+    h1 a:hover {
+      color: var(--Cyan);
+    }
+
+    .frase {
+      color: var(--SoftBlue);
+      font-size: var(--md);
+    }
+
+    .price {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin: 24px 0 12px;
+      padding-bottom: 24px;
+      border-bottom: solid 1px var(--Blue);
+    }
+
+    .price div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .cripto {
+      width: 105px;
+      color: var(--Cyan);
+      font-size: var(--md);
+    }
+    
+    .time {
+      width: 88px;
+      align-items: center;
+      color: var(--SoftBlue);
+      font-size: var(--sm);
+    }
+
+    .create span {
+      display: flex;
+      flex-direction: row;
+      width: 75%;
+      margin-top: 12px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .create img {
+      border: solid 1px var(--White);
+      border-radius: 50%;
+      width: 50px;
+    }
+
+    .create p {
+      color: var(--SoftBlue);
+      font-size: var(--sm);
+    }
+
+    .create p a {
+      text-decoration: none;
+      color: var(--White);
+      font-weight: 600;
+    }
+
+    .create p a:hover{
+      color: var(--Cyan);
+    }
+
+    .attribution {
+      display: flex;
+      width: 375px;
+      justify-content: space-evenly;
+    }
+
+    .attribution span { 
+      font-size: var(--sm);
+      text-align: center; 
+      color: var(--SoftBlue);
+    }
+
+    .attribution a { 
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
 <body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
+  <main>
+    <div class="images">
+      <figure>
+        <img class="cube" src="./images/image-equilibrium.jpg" alt="profile">
+      </figure>
+      <figure class="figEye">
+        <img class="eye" src="./images/icon-view.svg" alt="vew">
+      </figure>
+    </div>
+    <h1><a href="https://github.com/PabloASanchezC">Equilibrium #3429</a></h1>
+    <p class="frase">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="price">
+      <div class="cripto">
+        <img src="./images/icon-ethereum.svg" alt="etherum">
+        <p>0.041 ETH</p>
+      </div>
+      <div class="time">
+        <img src="./images/icon-clock.svg" alt="clock">
+        <p>3 days left</p>
+      </div>
+    </div>
+    <div class="create">
+      <span><img src="./images/image-avatar.png" alt="avatar"><p>Creation of <a href="https://github.com/PabloASanchezC">Jules Wyvern</a></p></span><
+    </div>
+  </main>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+   <span>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</span> 
+    <span>Coded by <a href="https://github.com/PabloASanchezC">qQQQp</a>.</span>
   </div>
 </body>
 </html>
